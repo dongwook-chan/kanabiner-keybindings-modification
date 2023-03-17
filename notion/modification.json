@@ -1,0 +1,75 @@
+{
+  "title": "JetBrains style key bindings for Notion",
+  "rules": [
+    {
+      "description": "`Rename` in Notion: Map `shift + f6` to `cmd + shift + r`",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "left_shift"
+              ]
+            },
+            "key_code": "f6"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^notion\\.id$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": false,
+              "key_code": "r",
+              "modifiers": [
+                "left_gui",
+                "left_shift"
+              ],
+              "lazy": false,
+              "halt": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "`Search in Workspace` in Notion: Map `cmd + shift + f` to `cmd + p`",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "left_gui",
+                "left_shift"
+              ]
+            },
+            "key_code": "f"
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^notion\\.id$"
+              ]
+            }
+          ],
+          "to": [
+            {
+              "repeat": false,
+              "modifiers": [
+                "left_gui"
+              ],
+              "key_code": "p"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
